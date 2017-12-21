@@ -5,4 +5,28 @@
 
 body input:focus:required:invalid, body textarea:focus:required:invalid {}
 body input:required:valid, body textarea:required:valid {}
-body {font-family: "RobotoRegular", sans-serif;	font-size: 16px;}
+body {font-family: "RobotoRegular", sans-serif;	font-size: 16px; margin: 0; padding: 0;}
+a {text-decoration: none;}
+
+.promoButton:hover {background-color: #ff6030;}
+
+#index {z-index: 1; background-image: url(/img/system/slide-01.jpg); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: #464646; transition: .3s;}
+#menu {width: 100%; height: 70px; background-color: transparent; z-index: 1000; position: fixed; transition: .3s;}
+#logo {position: relative; float: left; margin-left: 5%; line-height: 70px;}
+#logoIMG {width: 60px; height: 60px; margin-top: 5px; transition: .3s;}
+#menuContent {position: relative; float: right; margin-right: 5%; width: 70%; height: 100%;}
+
+.slogan {color: #fff; width: 45%; top: 0; left: 0; margin: 150px auto auto 10%; position: absolute; z-index: 4;}
+.sloganBigFont {font-family: "Merriweather", serif; font-size: 42px;}
+.sloganSmallFont {font-size: 16px; font-family: "Montserrat", sans-serif;}
+.overlay {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #000; opacity: .35; z-index: 2;}
+.clear {clear: both;}
+.promoButton {padding-left: 15px; padding-right: 15px; height: 40px; line-height: 40px; color: #fff; background-color: #4d009a; border-radius: 3px; border: none; transition: .3s; cursor: pointer; font-variant: small-caps; font-size: 16px; font-family: "Istok Web", sans-serif;}
+.promoButton i {padding-right: 10px;}
+.showing {opacity: 1; z-index: 2;}
+.sliderButtons {width: 68px; height: 16px; position: absolute; bottom: 50px; left: 50%; margin-left: -24px; z-index: 4;}
+.sliderButton {width: 16px; height: 16px; background-image: url(/img/system/sliderButton.png); position: relative; float: left; cursor: pointer; transition: .3s;}
+.selected {background-image: url(/img/system/sliderButtonActive.png);}
+.clouds {height: 300px; background: url(/img/system/clouds.png) repeat-x 0 bottom; z-index: 4; overflow: hidden;}
+.menuPoint {height: 20px; margin-top: 25px; line-height: 20px; padding-left: 10px; padding-right: 10px; border-right: 1px solid #fff; float: right; text-align: center; color: #fff; font-size: 13px; font-family: "Montserrat", sans-serif; transition: .3s;}
+.noBorder {border: none;}

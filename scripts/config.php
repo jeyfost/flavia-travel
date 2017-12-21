@@ -1,5 +1,5 @@
 <?php
-	$db = 'dbname';
+	$db = 'flavia_travel';
 	$host = 'localhost';
 	$user = 'root';
 	$password = '';

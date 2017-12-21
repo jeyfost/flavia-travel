@@ -12,12 +12,14 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-
+    #mpPhone {display: none;}
+    #mpEmail {display: none;}
+    #mpContacts {border: none;}
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-
+    .slogan {width: 90%; padding-right: 10%; text-align: center; margin: 150px 5% auto 5%;}
 }
 
 /* Custom, iPhone Retina */
