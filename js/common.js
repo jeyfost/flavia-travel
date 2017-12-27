@@ -14,14 +14,14 @@ $(window).on("scroll", function () {
        $('#logoIMG').height(50);
        document.getElementById("logoIMG").src = "/img/system/logoPurple.png";
 
-       $('#mpNews').css("color", "#000");
-       $('#mpContacts').css("color", "#000");
-       $('#mpPhone').css("color", "#000");
-       $('#mpEmail').css("color", "#000");
+       $('#mpNews').css("color", "#282828");
+       $('#mpContacts').css("color", "#282828");
+       $('#mpPhone').css("color", "#282828");
+       $('#mpEmail').css("color", "#282828");
 
-       $('#mpNews').css("border-right", "1px solid #000");
-       $('#mpContacts').css("border-right", "1px solid #000");
-       $('#mpPhone').css("border-right", "1px solid #000");
+       $('#mpNews').css("border-right", "1px solid #282828");
+       $('#mpContacts').css("border-right", "1px solid #282828");
+       $('#mpPhone').css("border-right", "1px solid #282828");
 
        $('#mpNews').css("margin-top", "20px");
        $('#mpContacts').css("margin-top", "20px");
@@ -59,5 +59,19 @@ function fontColor(action, id) {
         } else {
             $('#' + id).css("color", "#fff");
         }
+    }
+}
+
+function scrollToTop() {
+    $('html, body').animate({scrollTop: 0}, 500);
+}
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scroll").style.display = "block";
+    } else {
+        document.getElementById("scroll").style.display = "none";
     }
 }
