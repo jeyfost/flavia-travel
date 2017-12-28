@@ -12,7 +12,7 @@
     <meta name="description" content="" />
 	<meta name="keywords" content="" />
 
-    <title>Туристическое агенство Flavia-travel</title>
+    <title>Туристическое агенство Флавиа-Трэвел</title>
 
     <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
@@ -155,7 +155,7 @@
                             <img src="/img/system/client-alex.jpg" />
                         </div>
                         <div class="review">
-                            <p>Флавиа-трэвел стало лучшим агенством для нас! Вы рассмотрели все наши пожелания при планировании нашей поездки. Каждое сделанное вами предложение было превосходным!</p>
+                            <p>Флавиа-Трэвел стало лучшим агенством для нас! Вы рассмотрели все наши пожелания при планировании нашей поездки. Каждое сделанное вами предложение было превосходным!</p>
                             <span class="nameFont">— Алексей</span>
                         </div>
                         <div class="clear"></div>
@@ -207,7 +207,7 @@
                 <span class="sloganBigFont" style="color: #fff;">Исследуйте самые дальние уголки мира</span>
                 <br /><br /><br /><br />
                 <div class="container thin" style="padding: 0;">
-                    <span class="sloganSmallFont" style="color: #fff;">Более 10 лет Флавиа-трэвел организовывает вдохновляющие путешествия и гордится своей репутацией, как надёжного партнёра. С нами вы можете смело отправляться в самые удалённые уголки мира!</span>
+                    <span class="sloganSmallFont" style="color: #fff;">Более 10 лет Флавиа-Трэвел организовывает вдохновляющие путешествия и гордится своей репутацией, как надёжного партнёра. С нами вы можете смело отправляться в самые удалённые уголки мира!</span>
                     <br /><br /><br /><br />
                     <button class="promoButton" id="bottom"><i class="fa fa-paper-plane" aria-hidden="true"></i>найди своё идеальное путешествие</button>
                     <button class="promoButton" id="bottomMobile"><i class="fa fa-paper-plane" aria-hidden="true"></i>найди свой тур</button>
