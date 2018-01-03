@@ -22,6 +22,11 @@ $(window).on("load", function () {
     });
 
     $('#bottomPromo').height(parseInt($('#footer').offset().top - $('#bottomPromo').offset().top));
+
+    if($(window).width() < 320) {
+        $('#screenSpace').height(parseInt($('#screenSpace').height() + 150));
+        $('.overlay').height(parseInt($('.overlay').height() + 150));
+    }
 });
 
 $(window).on("scroll", function () {
@@ -146,13 +151,5 @@ function changeLogo(id, action) {
         document.getElementById(id).src = "/img/logo/" + id + "-logo-original.png";
     } else {
         document.getElementById(id).src = "/img/logo/" + id + "-logo-grey.png";
-    }
-}
-
-function changeIcon(id, action) {
-    if(action === 1) {
-        document.getElementById(id).src = "/img/system/" + id + "-color.png";
-    } else {
-        document.getElementById(id).src = "/img/system/" + id + ".png";
     }
 }

@@ -43,3 +43,11 @@ function scrollFunction() {
         document.getElementById("scroll").style.display = "none";
     }
 }
+
+function changeIcon(id, action) {
+    if(action === 1) {
+        document.getElementById(id).src = "/img/system/" + id + "-color.png";
+    } else {
+        document.getElementById(id).src = "/img/system/" + id + ".png";
+    }
+}

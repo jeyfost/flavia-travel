@@ -74,7 +74,7 @@
             <br /><br />
             <span class="sloganSmallFont">Мы предлагаем туристические услуги самого высокого качества, сочетая нашу энергию и энтузиазм с многолетним опытом.</span>
             <br /><br />
-            <button class="promoButton"><i class="fa fa-paper-plane" aria-hidden="true"></i>найди своё идеальное путешествие</button>
+            <button class="promoButton" id="topButton"><i class="fa fa-paper-plane" aria-hidden="true"></i>найди своё идеальное путешествие</button>
         </div>
         <div class="sliderButtons">
             <div class="sliderButton selected" id="button1"></div>

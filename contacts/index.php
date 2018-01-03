@@ -76,7 +76,7 @@
             <br /><br /><br /><br />
         </div>
 
-        <div class="container thin">
+        <div class="container thin" id="contactsContainer">
             <div class="column first">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;212030, Республика Беларусь, г. Могилёв, ул. Первомайская, 23/2, оф. 5
             </div>
@@ -116,7 +116,7 @@
                 <br /><br />
                 <label for="messageInput">Текст сообщения:</label>
                 <br />
-                <textarea id="messageInput" name="message" onkeydown="textAreaHeight(this)"></textarea>
+                <textarea id="messageInput" name="message" onkeydown="textAreaHeight(this)" style="width: 95%;"></textarea>
                 <br /><br />
                 <div class="g-recaptcha" data-sitekey="6LekeT4UAAAAAB8dA2yshwlG6h5ys5epa8G91qUu"></div>
                 <br />

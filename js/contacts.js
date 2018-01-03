@@ -82,40 +82,44 @@ function sendEmail() {
                url: "/scripts/ajaxEmailValidation.php",
                success: function (response) {
                    if(response === "ok") {
-                       if(text !== '') {
-                           $.ajax({
-                               type: "POST",
-                               data: formData,
-                               dataType: "json",
-                               processData: false,
-                               contentType: false,
-                               url: "/scripts/ajaxSendMessage.php",
-                               success: function (result) {
-                                   switch (result) {
-                                       case "ok":
-                                           $.notify("Ваше сообщение отправлено. Мы скоро вам ответим.", "success");
+                       if(phone !== '') {
+                           if(text !== '') {
+                               $.ajax({
+                                   type: "POST",
+                                   data: formData,
+                                   dataType: "json",
+                                   processData: false,
+                                   contentType: false,
+                                   url: "/scripts/ajaxSendMessage.php",
+                                   success: function (result) {
+                                       switch (result) {
+                                           case "ok":
+                                               $.notify("Ваше сообщение отправлено. Мы скоро вам ответим.", "success");
 
-                                           $('#nameInput').val("");
-                                           $('#emailInput').val("");
-                                           $('#phoneInput').val("");
-                                           $('#messageInput').val("");
+                                               $('#nameInput').val("");
+                                               $('#emailInput').val("");
+                                               $('#phoneInput').val("");
+                                               $('#messageInput').val("");
 
-                                           textAreaHeight(document.getElementById("messageInput"));
-                                           break;
-                                       case "captcha":
-                                           $.notify("Вы не прошли тест на робота. Попробуйте снова.", "error");
-                                           break;
-                                       case "failed":
-                                           $.notify("При отправке сообщения произошла ошибка. Попробуйте снова.", "error");
-                                           break;
-                                       default:
-                                           $.notify(result, "warn");
-                                           break;
+                                               textAreaHeight(document.getElementById("messageInput"));
+                                               break;
+                                           case "captcha":
+                                               $.notify("Вы не прошли тест на робота. Попробуйте снова.", "error");
+                                               break;
+                                           case "failed":
+                                               $.notify("При отправке сообщения произошла ошибка. Попробуйте снова.", "error");
+                                               break;
+                                           default:
+                                               $.notify(result, "warn");
+                                               break;
+                                       }
                                    }
-                               }
-                           });
+                               });
+                           } else {
+                               $.notify("Вы не ввели текст сообщения.", "error");
+                           }
                        } else {
-                           $.notify("Вы не ввели текст сообщения.", "error");
+                           $.notify("Вы ввели свой номер телефона.", "error");
                        }
                    } else {
                        $.notify("Вы ввели email недопустимого формата.", "error");
