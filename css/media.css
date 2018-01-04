@@ -21,6 +21,8 @@
     .column {width: 100%; margin: 20px auto auto 0;}
     .logoContainer {width: 100%; margin: 40px auto auto 0;}
     .promoButton {font-size: 12px;}
+    .fullNewsDescription {width: 100%; margin-top: 30px; float: none;}
+    .fullNewsPreview {margin: 0 auto; text-align: center; float: none;}
 }
 
 /* Extra Small Devices, Phones */

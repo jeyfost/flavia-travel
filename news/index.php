@@ -122,7 +122,8 @@
     <!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
 	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
 </head>
-<body>
+
+<body style="background-color: #f5f5f5;">
 
     <div id="page-preloader"><span class="spinner"></span></div>
 
@@ -137,15 +138,22 @@
         <div class="clear"></div>
     </div>
 
-    <div class="section grey" id="contacts" style="padding-top: 70px;">
+    <div class="section grey" id="news" style="padding-top: 70px;">
         <div class="header">
             <br /><br />
-            <span class="headerFont">Новости</span>
-            <br /><br /><br /><br />
 
             <?php
                 /* Список всех новостей */
                 if($type == "list") {
+                    if(empty($address)) {
+                        $address = 1;
+                    }
+
+                    echo "
+                        <span class='headerFont'>Новости</span>
+                        <br /><br /><br /><br />
+                    ";
+
                     $newsCountResult = $mysqli->query("SELECT COUNT(id) FROM ft_news");
                     $newsCount = $newsCountResult->fetch_array(MYSQLI_NUM);
 
@@ -190,10 +198,6 @@
                         echo "</div>";
 
                         /* Блок с постраничной навигацией */
-                        if(empty($address)) {
-                            $address = 1;
-                        }
-
                         echo "<div id='pageNumbers'>";
 
                         if($numbers > 1) {
@@ -314,12 +318,36 @@
 
                 if($type == "news") {
                     /* Одна новость */
+                    $newsResult = $mysqli->query("SELECT * FROM ft_news WHERE url = '".$address."'");
+                    $news = $newsResult->fetch_assoc();
+
+                    echo "
+                        <span class='headerFont'>".$news['header']."</span>
+                        <br /><br /><br /><br />
+                        <div class='breadcrumbsContainer' id='newsBreadcrumbs'>
+                            <a href='/news/' class='breadcrumbsLink'>Новости</a><span class='breadcrumbs'> > </span><a href='/news/".$news['url']."' class='breadcrumbsLink'>".$news['header']."</a>
+                        </div>
+                        <br />
+                        <div class='section' id='fullNewsDescription'>
+                            <div class='fullNewsPreview'><img src='/img/news/preview/".$news['preview']."' /></div>
+                            <div class='fullNewsDescription'>
+                                <span class='breadcrumbs'>".dateToString($news['date'])." г.</span>
+                                <br /><br />
+                                <span class='newsDescriptionFont'>".$news['description']."</span>
+                                <br /><br />
+                                <span class='newsFont'>".$news['text']."</span>
+                                <br />
+                                <div class='section' style='text-align: right; margin-top: 70px;'>
+                                    <a href='/news/'><button class='promoButton' id='topButton'><i class='fa fa-arrow-left' aria-hidden='true'></i>вернуться к списку новостей</button></a>
+                                </div>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                    ";
                 }
             ?>
         </div>
     </div>
-
-    <br /><br/>
 
     <div class="section dark" id="footer">
         <div class="header">
