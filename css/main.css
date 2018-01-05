@@ -88,11 +88,7 @@ label {font-family: "Istok Web", sans-serif;}
 .paginationLink {color: #4d009a;}
 .breadcrumbs, .breadcrumbsLink {font-size: 12px; font-style: italic; color: #7f7f7f; font-family: "Montserrat", sans-serif;}
 .breadcrumbsContainer {width: 94%; text-align: left; margin: 0 auto;}
-/*
-.fullNewsPreview {width: 270px; display: inline-block; vertical-align: top;}
-.fullNewsDescription {display: inline-block; margin-left: 10px; vertical-align: top; text-align: left;}
-*/
 .fullNewsPreview {display: inline-block; position: relative; float: left;}
-.fullNewsDescription {display: inline-block; position: relative; float: right;}
+.fullNewsDescription {display: inline-block; position: relative; float: right; text-align: left;}
 .newsDescriptionFont {font-family: "Istok Web", sans-serif; font-size: 16px; font-style: italic; color: #7f7f7f;}
 .newsFont {font-family: "Istok Web", sans-serif; font-size: 18px; color: #191919;}
