@@ -28,7 +28,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="shortcut icon" href="/img/system/favicon.ico" />
+	<link rel="shortcut icon" href="/img/favicon/favicon.ico" />
 
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
@@ -39,7 +39,7 @@
 
 	<link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 	<link rel="stylesheet" type="text/css" href="/css/admin.css" />
-	<link rel="stylesheet" href="/plugins/font-awesome-4.7.0/css/font-awesome.css" />
+	<link rel="stylesheet" href="/libs/font-awesome-4.7.0/css/font-awesome.css" />
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/admin/common.js"></script>
