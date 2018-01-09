@@ -88,8 +88,13 @@ if($_SESSION['userID'] != 1) {
 				<i class="fa fa-newspaper-o" aria-hidden="true"></i><span> Новости</span>
 			</div>
 		</a>
-		<a href="/admin/security/">
+        <a href="/admin/offers/">
 			<div class="menuPoint">
+				<i class="fa fa-fire" aria-hidden="true"></i><span> Горящие предложения</span>
+			</div>
+		</a>
+		<a href="/admin/security/">
+			<div class="menuPointActive">
 				<i class="fa fa-shield" aria-hidden="true"></i><span> Безопасность</span>
 			</div>
 		</a>

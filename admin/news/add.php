@@ -2,15 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: jeyfost
- * Date: 05.01.2018
- * Time: 8:03
+ * Date: 08.01.2018
+ * Time: 11:28
  */
 
 session_start();
-include("../scripts/connect.php");
+include("../../scripts/connect.php");
 
 if($_SESSION['userID'] != 1) {
-	header("Location: ../");
+	header("Location: ../../");
 }
 
 ?>
@@ -47,10 +47,14 @@ if($_SESSION['userID'] != 1) {
 	<link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 	<link rel="stylesheet" type="text/css" href="/css/admin.css" />
 	<link rel="stylesheet" href="/libs/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="/libs/lightview/css/lightview/lightview.css" />
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/libs/lightview/js/lightview/lightview.js"></script>
+    <script type="text/javascript" src="/libs/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="/js/admin/common.js"></script>
 	<script type="text/javascript" src="/js/notify.js"></script>
+	<script type="text/javascript" src="/js/admin/news/add.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -69,12 +73,12 @@ if($_SESSION['userID'] != 1) {
 	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
 </head>
 
-<body>
+<body <?php if(!empty($_REQUEST['id'])) {echo "onload='loadGalleryText(\"".$mysqli->real_escape_string($_REQUEST['id'])."\")'";} ?>>
 	<div id="page-preloader"><span class="spinner"></span></div>
 
 	<div id="topLine">
 		<div id="logo">
-			<a href="../"><span><i class="fa fa-home" aria-hidden="true"></i> flavia-travel.by</span></a>
+			<a href="/"><span><i class="fa fa-home" aria-hidden="true"></i> flavia-travel.by</span></a>
 		</div>
 		<a href="admin.php"><span class="headerText">Панель администрирвания</span></a>
 		<div id="exit" onclick="exit()">
@@ -83,7 +87,7 @@ if($_SESSION['userID'] != 1) {
 	</div>
 	<div id="leftMenu">
 		<a href="/admin/news/">
-			<div class="menuPoint">
+			<div class="menuPointActive">
 				<i class="fa fa-newspaper-o" aria-hidden="true"></i><span> Новости</span>
 			</div>
 		</a>
@@ -100,8 +104,37 @@ if($_SESSION['userID'] != 1) {
 	</div>
 
 	<div id="content">
-		<span class="headerFont"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Для начала работы выберите раздел</span>
+		<span class="headerFont">Добавление новости</span>
+		<br /><br />
+		<form method="post" id="newsForm">
+            <label for='headerInput'>Заголовок новости:</label>
+            <br />
+            <input id='headerInput' name='header' />
+            <br /><br />
+            <label for='previewInput'>Превью:</label>
+            <br />
+            <input type='file' class='file' id='previewInput' name='preview' />
+            <br /><br />
+            <label for='descriptionInput'>Краткое описание:</label>
+            <br />
+            <textarea id='descriptionInput' name='description' onkeyup='textAreaHeight(this)'></textarea>
+            <br /><br />
+            <label for='urlInput'>Ссылка на новость (латинские буквы, цифры):</label>
+            <br />
+            <input id='urlInput' name='url' />
+            <br /><br />
+            <label for='textInput'>Текст новости:</label>
+            <br />
+            <textarea id='textInput' name='text'></textarea>
+            <br /><br />
+            <input type='button' id='addNewsSubmit' value='Добавить новость' onmouseover='buttonHover("addNewsSubmit", 1)' onmouseout='buttonHover("addNewsSubmit", 0)' onclick='addNews()' class='button' />
+		</form>
 	</div>
+    <br /><br />
+
+    <script type="text/javascript">
+		CKEDITOR.replace("text");
+	</script>
 
 </body>
 

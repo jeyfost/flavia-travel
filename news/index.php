@@ -329,7 +329,11 @@
                         </div>
                         <br />
                         <div class='section' id='fullNewsDescription'>
-                            <div class='fullNewsPreview'><img src='/img/news/preview/".$news['preview']."' /></div>
+                            <div class='fullNewsPreview'>
+                                <img src='/img/news/preview/".$news['preview']."' />
+                                <br /><br />
+                                <a href='/news/'><button class='promoButton'><i class='fa fa-arrow-left' aria-hidden='true'></i>вернуться к списку новостей</button></a>
+                            </div>
                             <div class='fullNewsDescription'>
                                 <span class='breadcrumbs'>".dateToString($news['date'])." г.</span>
                                 <br /><br />
@@ -337,8 +341,8 @@
                                 <br /><br />
                                 <span class='newsFont'>".$news['text']."</span>
                                 <br />
-                                <div class='section' style='text-align: right; margin-top: 70px;'>
-                                    <a href='/news/'><button class='promoButton' id='topButton'><i class='fa fa-arrow-left' aria-hidden='true'></i>вернуться к списку новостей</button></a>
+                                <div class='section' style='text-align: right; margin-top: 40px;'>
+                                    <a href='/news/'><button class='promoButton'><i class='fa fa-arrow-left' aria-hidden='true'></i>вернуться к списку новостей</button></a>
                                 </div>
                             </div>
                             <div class='clear'></div>
