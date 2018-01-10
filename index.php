@@ -109,6 +109,7 @@
         </div>
         <div class="clear"></div>
 
+        <a name="offers"></a>
         <div class="section grey text-center">
             <div class="header">
                 <br /><br /><br />
@@ -117,7 +118,7 @@
             </div>
             <div class="container text-center">
                 <?php
-                    $offerResult = $mysqli->query("SELECT * FROM ft_offers WHERE active = '1'");
+                    $offerResult = $mysqli->query("SELECT * FROM ft_offers WHERE active = '1' ORDER BY date DESC");
 
                     if($offerResult->num_rows == 0) {
                         echo "<span style='font-family: \"Istok Web\", sans-serif;'>На данный момент нет ни одного предложения, но скоро мы обязательно что-нибудь добавим &#128522;</span><br /><br /><br /><br />";
@@ -157,7 +158,7 @@
 
         <div class="section white text-center">
             <div class="header">
-                <br /><br />
+                <br /><br /><br />
                 <span class="headerFont">Почему мы?</span>
                 <br /><br /><br /><br />
                 <div class="container">
@@ -186,7 +187,7 @@
 
         <div class="section grey">
             <div class="header">
-                <br /><br />
+                <br /><br /><br />
                 <span class="headerFont">Отзывы клиентов</span>
                 <br /><br /><br /><br />
                 <div class="container thin" id="clients">
@@ -227,7 +228,7 @@
 
         <div class="section white">
             <div class="header">
-                <br /><br />
+                <br /><br /><br />
                 <span class="headerFont">Наши партнёры</span>
                 <br /><br /><br /><br />
                 <div class="container text-center">

@@ -2,6 +2,8 @@
  * Created by jeyfost on 28.12.2017.
  */
 
+var offer = 0;
+
 $(window).on("load", function () {
     if($('#footer').offset().top < parseInt($(document).height() - $('#footer').height())) {
         $('#footer').offset({top: $(document).height()});
@@ -38,6 +40,10 @@ $(window).on("scroll", function () {
        $('#mpPhone').css("color", "#282828");
        $('#mpEmail').css("color", "#282828");
 
+       if(offer === 1) {
+           $('#mpNews').css("color", "#282828");
+       }
+
        $('#mpContacts').css("border-right", "1px solid #282828");
        $('#mpNews').css("border-right", "1px solid #282828");
        $('#mpPhone').css("border-right", "1px solid #282828");
@@ -56,6 +62,10 @@ $(window).on("scroll", function () {
        $('#mpContacts').css("color", "#fff");
        $('#mpPhone').css("color", "#fff");
        $('#mpEmail').css("color", "#fff");
+
+       if(offer === 1) {
+           $('#mpNews').css("color", "#fff");
+       }
 
        $('#mpContacts').css("border-right", "1px solid #fff");
        $('#mpNews').css("border-right", "1px solid #fff");
@@ -86,4 +96,8 @@ function pageBlock(action, block, text) {
 		document.getElementById(block).style.backgroundColor = "transparent";
 		document.getElementById(text).style.color = "#4d009a";
 	}
+}
+
+function isOffer(flag) {
+    offer = flag;
 }

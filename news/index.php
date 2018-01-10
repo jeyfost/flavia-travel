@@ -11,39 +11,50 @@
         $type = "news";
 
         if($linkCheck[0] == 0) {
-            $type = "list";
+            $linkCheckResult = $mysqli->query("SELECT COUNT(id) FROM ft_offers WHERE url = '".$address."' AND active = '1'");
+            $linkCheck = $linkCheckResult->fetch_array(MYSQLI_NUM);
 
-            /* Далее следует непереводимая игра слов для преобразования и приведения типов первой ячейки url */
-            $addressNew = (int)$address;
-            $address = (string)$address;
-            $addressNew = (string)$addressNew;
-            /* И благополучно завершается */
+            $type = "offer";
 
-            if($addressNew == $address) {
-                /* Это значит в первой ячейке url находится номер страницы */
-                $quantityResult = $mysqli->query("SELECT COUNT(id) FROM ft_news");
-                $quantity = $quantityResult->fetch_array(MYSQLI_NUM);
+            if($linkCheck[0] == 0) {
+                $type = "list"; //список всех новостей
 
-                if ($quantity[0] > 10) {
-                    if ($quantity[0] % 10 != 0) {
-                        $numbers = intval(($quantity[0] / 10) + 1);
+                /* Далее следует непереводимая игра слов для преобразования и приведения типов первой ячейки url */
+                $addressNew = (int)$address;
+                $address = (string)$address;
+                $addressNew = (string)$addressNew;
+                /* И благополучно завершается */
+
+                if($addressNew == $address) {
+                    /* Это значит в первой ячейке url находится номер страницы */
+                    $quantityResult = $mysqli->query("SELECT COUNT(id) FROM ft_news");
+                    $quantity = $quantityResult->fetch_array(MYSQLI_NUM);
+
+                    if ($quantity[0] > 10) {
+                        if ($quantity[0] % 10 != 0) {
+                            $numbers = intval(($quantity[0] / 10) + 1);
+                        } else {
+                            $numbers = intval($quantity[0] / 10);
+                        }
                     } else {
-                        $numbers = intval($quantity[0] / 10);
+                        $numbers = 1;
                     }
+
+                    $page = (int)$addressNew;
+
+                    if($page < 1 or $page > $numbers) {
+                        header("Location: /news");
+                    }
+
+                    $start = $page * 10 - 10;
                 } else {
-                    $numbers = 1;
-                }
-
-                $page = (int)$addressNew;
-
-                if($page < 1 or $page > $numbers) {
+                    /* Это значит в первой ячейке url находится что-то неизвестное */
                     header("Location: /news");
                 }
-
-                $start = $page * 10 - 10;
             } else {
-                /* Это значит в первой ячейке url находится что-то неизвестное */
-                header("Location: /news");
+                if($url[0] == "news") {
+                    header("Location: /offers/".$url[1]);
+                }
             }
         }
     } else {
@@ -123,7 +134,7 @@
 	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
 </head>
 
-<body style="background-color: #f5f5f5;">
+<body style="background-color: #f5f5f5;" onload="isOffer(1)">
 
     <div id="page-preloader"><span class="spinner"></span></div>
 
@@ -133,7 +144,7 @@
             <a href="mailto: flavia-travel@mail.ru"><div class="menuPoint noBorder" id="mpEmail" onmouseover="fontColor(1, 'mpEmail')" onmouseout="fontColor(2, 'mpEmail')"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;flavia-travel@mail.ru</div></a>
             <a href="tel: +375222745444"><div class="menuPoint" id="mpPhone" onmouseover="fontColor(1, 'mpPhone')" onmouseout="fontColor(2, 'mpPhone')"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;+375 222 74-54-44</div></a>
             <a href="/contacts"><div class="menuPoint" id="mpContacts" onmouseover="fontColor(1, 'mpContacts')" onmouseout="fontColor(2, 'mpContacts')">Контакты</div></a>
-            <a href="/news"><div class="menuPoint activePoint" id="mpNews">Новости</div></a>
+            <a href="/news"><div class="menuPoint <?php if($url[0] == "news") {echo "activePoint";} ?>" id="mpNews" <?php if($url[0] != "news") {echo "onmouseover='fontColor(1, \"mpNews\")' onmouseout='fontColor(2, \"mpNews\")'";} ?>>Новости</div></a>
         </div>
         <div class="clear"></div>
     </div>
@@ -349,6 +360,35 @@
                         </div>
                     ";
                 }
+
+                if($type == "offer") {
+                    $offerResult = $mysqli->query("SELECT * FROM ft_offers WHERE url = '".$address."'");
+                    $offer = $offerResult->fetch_assoc();
+
+                    echo "
+                        <span class='headerFont'>".$offer['header']."</span>
+                        <br /><br /><br /><br />
+                        <div class='section' id='fullNewsDescription'>
+                            <div class='fullNewsPreview'>
+                                <img src='/img/offers/preview/".$offer['preview']."' />
+                                <br /><br />
+                                <a href='/#offers'><button class='promoButton'><i class='fa fa-arrow-left' aria-hidden='true'></i>вернуться к предложениям</button></a>
+                            </div>
+                            <div class='fullNewsDescription'>
+                                <span class='breadcrumbs'>".dateToString($offer['date'])." г.</span>
+                                <br /><br />
+                                <span class='newsDescriptionFont'>".$offer['description']."</span>
+                                <br /><br />
+                                <span class='newsFont'>".$offer['text']."</span>
+                                <br />
+                                <div class='section' style='text-align: right; margin-top: 40px;'>
+                                    <a href='/#offers'><button class='promoButton'><i class='fa fa-arrow-left' aria-hidden='true'></i>вернуться к предложениям</button></a>
+                                </div>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                    ";
+                }
             ?>
         </div>
     </div>
@@ -383,4 +423,5 @@
     <div onclick="scrollToTop()" id="scroll"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
 
 </body>
+
 </html>
