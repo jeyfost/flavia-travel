@@ -24,7 +24,7 @@ if($_FILES['upload']) {
 
 		move_uploaded_file($_FILES['upload']['tmp_name'], "../../img/news/content/".$name);
 
-		$full_path = '../../img/photos/gallery/content/'.$name;
+		$full_path = '../../img/news/content/'.$name;
 		$message = "Файл ".$_FILES['upload']['name']." загружен.";
 		$size = @getimagesize("../../img/news/content/".$name);
 

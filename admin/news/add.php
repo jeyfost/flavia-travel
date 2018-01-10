@@ -73,7 +73,7 @@ if($_SESSION['userID'] != 1) {
 	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
 </head>
 
-<body <?php if(!empty($_REQUEST['id'])) {echo "onload='loadGalleryText(\"".$mysqli->real_escape_string($_REQUEST['id'])."\")'";} ?>>
+<body>
 	<div id="page-preloader"><span class="spinner"></span></div>
 
 	<div id="topLine">

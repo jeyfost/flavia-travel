@@ -11,7 +11,7 @@
         $type = "news";
 
         if($linkCheck[0] == 0) {
-            $linkCheckResult = $mysqli->query("SELECT COUNT(id) FROM ft_offers WHERE url = '".$address."' AND active = '1'");
+            $linkCheckResult = $mysqli->query("SELECT COUNT(id) FROM ft_offers WHERE url = '".$address."'");
             $linkCheck = $linkCheckResult->fetch_array(MYSQLI_NUM);
 
             $type = "offer";

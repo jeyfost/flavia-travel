@@ -40,6 +40,9 @@ function addNews() {
 									case "url":
 										$.notify("Введённая вами ссылка на новость уже существует. Придумайте другую.", "error");
 										break;
+									case "number":
+										$.notify("Ссылка на новость не может содержать одни цифры.", "error");
+										break;
 									case "preview":
 										$.notify("Вы выбрали превью недопустимого формата.", "error");
 										break;

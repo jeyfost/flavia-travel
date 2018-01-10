@@ -118,7 +118,7 @@
             </div>
             <div class="container text-center">
                 <?php
-                    $offerResult = $mysqli->query("SELECT * FROM ft_offers WHERE active = '1' ORDER BY date DESC");
+                    $offerResult = $mysqli->query("SELECT * FROM ft_offers ORDER BY date DESC");
 
                     if($offerResult->num_rows == 0) {
                         echo "<span style='font-family: \"Istok Web\", sans-serif;'>На данный момент нет ни одного предложения, но скоро мы обязательно что-нибудь добавим &#128522;</span><br /><br /><br /><br />";

@@ -148,11 +148,13 @@ if(!empty($_REQUEST['id'])) {
                         <br />
                         <input type='file' class='file' id='previewInput' name='preview' />
                         <br /><br />
-						<div class='photoPreview'>
-							<a href='/img/news/preview/".$newsContent['preview']."' class='lightview' data-lightview-options='skin: \"light\"'><img src='/img/news/preview/".$newsContent['preview']."' /></a>
-							<br />
-							<span>Увеличить</span>
-						</div>
+						<a href='/img/news/preview/".$newsContent['preview']."' class='lightview' data-lightview-options='skin: \"light\"'>
+                            <div class='photoPreview'>
+                                <img src='/img/news/preview/".$newsContent['preview']."' />
+                                <br />
+                                <span>Увеличить</span>
+                            </div>
+						</a>
 						<br />
 						<label for='descriptionInput'>Краткое описание:</label>
 						<br />

@@ -35,10 +35,10 @@ function editNews() {
 						success: function (response) {
 							switch (response) {
 								case "ok":
-									$.notify("Новость была успешно добавлена!", "success");
+									$.notify("Новость была успешно отредактирована!", "success");
 									break;
 								case "failed":
-									$.notify("При добавлении новости произошла ошибка. Попробуйте снова.", "error");
+									$.notify("При редактировании новости произошла ошибка. Попробуйте снова.", "error");
 									break;
 								case "preview":
 									$.notify("Вы выбрали для превью файл недопустимого формата.", "error");
@@ -47,7 +47,10 @@ function editNews() {
 									$.notify("Произошла ошибка при загрузке превью. Попробуйте снова.", "error");
 									break;
 								case "url":
-									$.notify("Такой ссылка на новость уже существует в базе данных сайта. Придумайте другую.", "error");
+									$.notify("Такая ссылка на новость уже существует в базе данных сайта. Придумайте другую.", "error");
+									break;
+								case "number":
+									$.notify("Ссылка на новость не может содержать одни цифры.", "error");
 									break;
 								default:
 									$.notify(response, "warn");
