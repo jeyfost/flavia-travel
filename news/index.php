@@ -380,7 +380,7 @@
                                 <br /><br />
                                 <span class='newsFont'>".$news['text']."</span>
                                 <br />
-                                <div class='section' style='text-align: right; margin-top: 40px;'>
+                                <div class='section' style='text-align: right; margin-top: 40px;' id='newsButtonSection'>
                                     <a href='/news/'><button class='promoButton'><i class='fa fa-arrow-left' aria-hidden='true'></i>вернуться к списку новостей</button></a>
                                 </div>
                             </div>
@@ -409,7 +409,7 @@
                                 <br /><br />
                                 <span class='newsFont'>".$offer['text']."</span>
                                 <br />
-                                <div class='section' style='text-align: right; margin-top: 40px;'>
+                                <div class='section' style='text-align: right; margin-top: 40px;' id='offerButtonSection'>
                                     <a href='/#offers'><button class='promoButton'><i class='fa fa-arrow-left' aria-hidden='true'></i>вернуться к предложениям</button></a>
                                 </div>
                             </div>
