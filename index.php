@@ -1,3 +1,7 @@
+<?php
+    include('scripts/connect.php');
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
@@ -105,7 +109,53 @@
         </div>
         <div class="clear"></div>
 
-        <div class="section grey" style="text-align: center;">
+        <div class="section grey text-center">
+            <div class="header">
+                <br /><br /><br />
+                <span class="headerFont">Горящие предложения</span>
+                <br /><br /><br /><br />
+            </div>
+            <div class="container text-center">
+                <?php
+                    $offerResult = $mysqli->query("SELECT * FROM ft_offers WHERE active = '1'");
+
+                    if($offerResult->num_rows == 0) {
+                        echo "<span style='font-family: \"Istok Web\", sans-serif;'>На данный момент нет ни одного предложения, но скоро мы обязательно что-нибудь добавим &#128522;</span><br /><br /><br /><br />";
+                    } else {
+                        $i = 0;
+
+                        while($offer = $offerResult->fetch_assoc()) {
+                            echo "
+                                <a href='/offers/".$offer['url']."' class='newsLink'>
+                                    <div class='newsContainer'>
+                                        <div class='newsPreview'>
+                                            <img src='/img/offers/preview/".$offer['preview']."' />
+                                            <div class='newsDate' style='background-color: #".labelColor($i)."'>".dateToString($offer['date'])."</div>
+                                        </div>
+                                        <div class='newsDescription'>
+                                            <span class='newsHeader'><br />".$offer['header']."</span>
+                                            <p>".$offer['description']."</p>
+                                        </div>
+                                        <div class='newsButton' id='newsButton".$offer['id']."' onmouseover='newsButtonColor(\"newsButton".$offer['id']."\", \"".labelColor($i)."\", 1)' onmouseout='newsButtonColor(\"newsButton".$offer['id']."\", \"".labelColor($i)."\", 0)'>
+                                            <i class='fa fa-share' aria-hidden='true'></i>&nbsp;&nbsp;&nbsp;<span>подробнее</span>
+                                        </div>
+                                        <div class='clear'></div>
+                                    </div>
+                                </a>
+                            ";
+
+                            $i++;
+
+                            if($i > 4) {
+                                $i = $i - 5;
+                            }
+                        }
+                    }
+                ?>
+            </div>
+        </div>
+
+        <div class="section white text-center">
             <div class="header">
                 <br /><br />
                 <span class="headerFont">Почему мы?</span>
@@ -134,7 +184,7 @@
             </div>
         </div>
 
-        <div class="section white">
+        <div class="section grey">
             <div class="header">
                 <br /><br />
                 <span class="headerFont">Отзывы клиентов</span>
@@ -175,7 +225,7 @@
             </div>
         </div>
 
-        <div class="section grey">
+        <div class="section white">
             <div class="header">
                 <br /><br />
                 <span class="headerFont">Наши партнёры</span>
@@ -201,7 +251,7 @@
             </div>
         </div>
 
-        <div class="section white" id="bottomPromo" style="background: url(/img/system/bg-02.jpg) no-repeat top left;">
+        <div class="section grey" id="bottomPromo" style="background: url(/img/system/bg-02.jpg) no-repeat top left;">
              <div class="header">
                 <br /><br /><br />
                 <span class="sloganBigFont" style="color: #fff;">Исследуйте самые дальние уголки мира</span>

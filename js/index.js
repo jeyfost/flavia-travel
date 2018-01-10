@@ -153,3 +153,13 @@ function changeLogo(id, action) {
         document.getElementById(id).src = "/img/logo/" + id + "-logo-grey.png";
     }
 }
+
+function newsButtonColor(id, color, action) {
+    if(action === 1) {
+        $('#' + id).css("background-color", "#" + color);
+        $('#' + id).css("color", "#fff");
+    } else {
+        $('#' + id).css("background-color", "transparent");
+        $('#' + id).css("color", "#191919");
+    }
+}
