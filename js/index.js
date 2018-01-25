@@ -33,6 +33,7 @@ $(window).on("scroll", function () {
    if($(window).scrollTop() > 10) {
        $('#menu').css("background-color", "#fff");
        $('#menu').height(60);
+       $('#menu').css("box-shadow", "0 5px 6px -4px rgba(0, 0, 0, 0.17)");
        $('#logoIMG').width(50);
        $('#logoIMG').height(50);
        document.getElementById("logoIMG").src = "/img/system/logoPurple.png";
@@ -53,6 +54,7 @@ $(window).on("scroll", function () {
    } else {
        $('#menu').css("background-color", "transparent");
        $('#menu').height(70);
+       $('#menu').css("box-shadow", "none");
        $('#logoIMG').width(60);
        $('#logoIMG').height(60);
        document.getElementById("logoIMG").src = "/img/system/logoWhite.png";
