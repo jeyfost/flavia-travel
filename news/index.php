@@ -133,7 +133,7 @@
     <!-- BEGIN JIVOSITE CODE {literal} -->
     <script type='text/javascript'>
         (function () {
-            var widget_id = 'qyWFWDO490';
+            var widget_id = 'H5t2LAVbMI';
             var d = document;
             var w = window;
 
@@ -162,7 +162,7 @@
 	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
 </head>
 
-<body style="background-color: #f5f5f5;" onload="isOffer(1)">
+<body style="background-color: #f5f5f5;" <?php if($url[0] == "offers") {echo "onload=\"isOffer(1)\"";} ?>>
 
     <div id="page-preloader"><span class="spinner"></span></div>
 

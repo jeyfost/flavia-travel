@@ -15,8 +15,6 @@ $(window).on("load", function () {
             $('.fullNewsDescription').width(parseInt(w - $('.fullNewsPreview').width() - 10));
         }
     }
-
-    $('')
 });
 
 $(window).on("resize", function () {

@@ -6,4 +6,4 @@
  * Time: 7:34
  */
 
-define("ADMIN_EMAIL", "airlab@bk.ru");
+define("ADMIN_EMAIL", "flavia-travel@mail.ru");
