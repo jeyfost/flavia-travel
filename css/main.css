@@ -15,6 +15,7 @@ label {font-family: "Istok Web", sans-serif;}
 #messageButton:hover, .promoButton:hover {background-color: #ff6030;}
 .newsContainer:hover {background-color: #ebebeb;}
 .breadcrumbsLink:hover {text-decoration: underline;}
+.greyFont a:hover {color: #ff6030;}
 
 #index {z-index: 1; background-image: url(/img/system/slide-01.jpg); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: #464646; transition: .3s;}
 #menu {width: 100%; height: 70px; background-color: transparent; z-index: 1000; position: fixed; transition: .3s;}
@@ -65,7 +66,7 @@ label {font-family: "Istok Web", sans-serif;}
 .logoContainer img {transition: .3s; height: 40px;}
 .text-center {text-align: center;}
 .dark {background-color: #191919;}
-.logo {position: relative; float: left; width: 50px;}
+.logo {position: relative; float: left; width: 250px;}
 .logo img {width: 50px;}
 .social {position: relative; float: right;}
 .socialButton {position: relative; float: right; width: 42px; margin-right: 10px;}
@@ -94,3 +95,6 @@ label {font-family: "Istok Web", sans-serif;}
 .fullNewsDescription img {width: 90%; margin: 0 auto;}
 .newsDescriptionFont {font-family: "Istok Web", sans-serif; font-size: 16px; font-style: italic; color: #7f7f7f;}
 .newsFont {font-family: "Istok Web", sans-serif; font-size: 18px; color: #191919;}
+.copyFont {font-family: "Istok Web", sans-serif; font-size: 14px; color: #fff; transition: .3s;}
+.greyFont, .greyFont a {font-family: "Istok Web", sans-serif; font-size: 12px; color: #999; transition: .3s;}
+.creator {width: 180px; float: right;}

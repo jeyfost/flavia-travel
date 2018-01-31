@@ -162,6 +162,12 @@
             <div class="container thin" style="padding-bottom: 20px;">
                 <div class="logo">
                     <a href="/"><img src="/img/system/logoWhite.png" /></a>
+                    <div class="creator text-center">
+                        <span class="copyFont">Флавиа Трэвел &copy; <?= date('Y') ?></span>
+                        <br />
+                        <span class="greyFont">Создание сайта: <a href="https://airlab.by/" target="_blank">airlab</a></span>
+                    </div>
+                    <div class="clear"></div>
                 </div>
                 <div class="social">
                     <div class="socialButton">

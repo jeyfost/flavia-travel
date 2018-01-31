@@ -23,6 +23,9 @@
     .promoButton {font-size: 12px;}
     .fullNewsDescription {width: 100%; margin-top: 30px; float: none;}
     .fullNewsPreview {margin: 0 auto; text-align: center; float: none;}
+    .logo {width: 100%; padding-bottom: 20px; margin-top: -50px;}
+    .social {float: none; margin: 20px auto auto auto; text-align: center; width: 210px;}
+    .creator {float: none; margin: 20px auto auto auto;}
 }
 
 /* Extra Small Devices, Phones */
@@ -33,8 +36,6 @@
     #newsButtonSection, #offerButtonSection {text-align: center !important;}
 
     .slogan {width: 90%; padding-right: 10%; text-align: center; margin: 150px 5% auto 5%;}
-    .logo {width: 100%; padding-bottom: 20px;}
-    .social {float: none; margin: 0 auto; text-align: center; width: 210px;}
     .socialButton {float: left; margin-right: 0; margin-left: 10px;}
     .pageNumberBlock, .pageNumberBlockActive {width: 30px; height: 25px; line-height: 25px;}
     .pageNumberBlockSide {height: 25px; line-height: 25px;}
