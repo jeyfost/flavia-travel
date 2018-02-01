@@ -14,10 +14,10 @@ if($_SESSION['userID'] != 1) {
 }
 
 if(!empty($_REQUEST['id'])) {
-    $newsCheckResult = $mysqli->query("SELECT COUNT(id) FROM ft_news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
-    $newsCheck = $newsCheckResult->fetch_array(MYSQLI_NUM);
+    $offerCheckResult = $mysqli->query("SELECT COUNT(id) FROM ft_offers WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+    $offerCheck = $offerCheckResult->fetch_array(MYSQLI_NUM);
 
-    if($newsCheck[0] == 0) {
+    if($offerCheck[0] == 0) {
         header("Location: index.php");
     }
 }
