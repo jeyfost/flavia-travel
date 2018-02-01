@@ -83,6 +83,11 @@ if($_SESSION['userID'] != 1) {
 		</div>
 	</div>
 	<div id="leftMenu">
+        <a href="/admin/images/">
+            <div class="menuPoint">
+                <i class="fa fa-picture-o" aria-hidden="true"></i><span> Фотографии</span>
+            </div>
+        </a>
 		<a href="/admin/news/">
 			<div class="menuPoint">
 				<i class="fa fa-newspaper-o" aria-hidden="true"></i><span> Новости</span>

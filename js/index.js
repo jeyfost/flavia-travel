@@ -131,7 +131,7 @@ function selectSlide(slide) {
     $('#button' + prevSlide).attr("class", "sliderButton");
     $('#button' + slide).attr("class", "sliderButton selected");
     $('#index').attr("class", slide);
-    $('#index').css("background-image", "url(/img/system/slide-0" + slide + ".jpg)");
+    $('#index').css("background-image", "url(/img/slides/slide-0" + slide + ".jpg)");
 
     setTimeout(function () {
         $('.slogan').html(text);
