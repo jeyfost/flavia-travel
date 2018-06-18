@@ -5,11 +5,12 @@ a {text-decoration: none; color: #4c4c4c; transition: .3s;}
 select {height: 40px; line-height: 40px; margin-top: 5px; padding: 5px;}
 textarea {width: 300px; padding: 10px; min-height: 20px; font-style: italic; border: 1px solid #9e9e9e; transition: .3s; resize: none;}
 
-#exit:hover, #logo a:hover, .headerText:hover {color: #000;}
+#exit:hover, #logo a:hover, .headerText:hover, a:hover {color: #000;}
 
 .menuPoint:hover {background-color: #d6d6d6; color: #000;}
 .photoPreview:hover, .sliderPhotoPreview:hover {background-color: #dbdbdb;}
 .photoPreview span:hover {text-decoration: underline;}
+.linkRed:hover {color: #b70000;}
 
 #loginContainer {margin: 200px auto auto auto; background-color: #fff; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); width: 320px; padding: 20px;}
 #loginSubmit {width: 100%;}
@@ -33,3 +34,9 @@ textarea {width: 300px; padding: 10px; min-height: 20px; font-style: italic; bor
 .menuPointActive {background-color: #d6d6d6; width: 200px; text-align: center; height: 40px; line-height: 40px; transition: .3s; padding: 10px; color: #000;}
 .sliderPhotoPreview {display: inline-block; margin-right: 10px; margin-bottom: 10px; vertical-align: top; width: 100px; padding: 5px; background-color: #fff; text-align: center;}
 .sliderPhotoPreview img {width: 100%;}
+.nameFont {font-size: 20px; color: #333; font-weight: bold;}
+.emailFont {font-style: italic;}
+.checkbox {width: 20px; position: absolute; left: 90px; top: -8px;}
+.row {width: 100%; padding-top: 5px; padding-bottom: 5px;}
+.border-bottom {border-bottom: 1px dashed #4c4c4c;}
+.linkRed {transition: .3s; cursor: pointer;}

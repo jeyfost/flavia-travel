@@ -124,7 +124,7 @@ include("../scripts/connect.php");
     <?php
         $i = 0;
 
-        $reviewResult = $mysqli->query("SELECT * FROM ft_reviews ORDER BY date DESC");
+        $reviewResult = $mysqli->query("SELECT * FROM ft_reviews WHERE showing = '1' ORDER BY date DESC");
 
         if($reviewResult->num_rows > 0) {
             while($review = $reviewResult->fetch_assoc()) {
