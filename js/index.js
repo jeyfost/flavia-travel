@@ -165,3 +165,9 @@ function newsButtonColor(id, color, action) {
         $('#' + id).css("color", "#191919");
     }
 }
+
+setInterval(function() {
+    if($("#bigtrip_popup").css("display") === "block") {
+        $("#bigtrip_popup").css("margin-top", "60px");
+    }
+}, 1000);
