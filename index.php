@@ -27,6 +27,8 @@
 
     <link rel="stylesheet" href="/libs/revealator-master/fm.revealator.jquery.css" />
     <link rel="stylesheet" href="/libs/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/libs/remodal/dist/remodal.css" />
+    <link rel="stylesheet" href="/libs/remodal/dist/remodal-default-theme.css" />
 	<link rel="stylesheet" href="/css/fonts.css" />
 	<link rel="stylesheet" href="/css/main.css" />
 	<link rel="stylesheet" href="/css/media.css" />
@@ -35,6 +37,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/libs/revealator-master/fm.revealator.jquery.js"></script>
+    <script type="text/javascript" src="/libs/remodal/dist/remodal.min.js"></script>
+    <script type="text/javascript" src="/libs/notify/notify.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
 
@@ -92,6 +96,7 @@
             <a href="mailto: flavia-travel@mail.ru"><div class="menuPoint noBorder" id="mpEmail" onmouseover="fontColor(1, 'mpEmail')" onmouseout="fontColor(2, 'mpEmail')"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;flavia-travel@mail.ru</div></a>
             <a href="tel: +375222745444"><div class="menuPoint" id="mpPhone" onmouseover="fontColor(1, 'mpPhone')" onmouseout="fontColor(2, 'mpPhone')"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;+375 222 74-54-44</div></a>
             <a href="/contacts"><div class="menuPoint" id="mpContacts" onmouseover="fontColor(1, 'mpContacts')" onmouseout="fontColor(2, 'mpContacts')">Контакты</div></a>
+            <a href="/reviews"><div class="menuPoint" id="mpReviews" onmouseover="fontColor(1, 'mpReviews')" onmouseout="fontColor(2, 'mpReviews')">Отзывы</div></a>
             <a href="/news"><div class="menuPoint" id="mpNews" onmouseover="fontColor(1, 'mpNews')" onmouseout="fontColor(2, 'mpNews')">Новости</div></a>
         </div>
         <div class="clear"></div>
@@ -262,6 +267,10 @@
                         <div class="clear"></div>
                     </div>
                     <div class="clear"></div>
+                    <br /><br />
+                    <a data-remodal-target="modal"><button class="reviewButton"><i class="fa fa-pencil" aria-hidden="true"></i> оставьте свой отзыв</button></a>
+                    <br /><br />
+                    <a href="/reviews" class="reviewsLink">Прочитать все отзывы <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -307,6 +316,21 @@
              </div>
         </div>
 
+        <div class="remodal" data-remodal-id="modal" data-remodal-options="closeOnConfirm: false">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <div style='width: 80%; margin: 0 auto;'><h1>Пожалуйста, оставьте свой отзыв.<br />Для нас это очень важно!</h1></div>
+            <br />
+            <form method="post" id="modalForm">
+                <input id="nameInput" name="name" placeholder="Имя" />
+                <br /><br />
+                <input id="emailInput" name="email" placeholder="E-mail" />
+                <br /><br />
+                <textarea id="textInput" name="text" placeholder="Отзыв"></textarea>
+            </form>
+            <br />
+            <button data-remodal-action="confirm" class="remodal-confirm" style="width: 150px;" onclick="sendReview()">Оставить отзыв</button>
+        </div>
+
         <div class="section dark" id="footer">
             <div class="header">
                 <br /><br /><br />
@@ -345,4 +369,5 @@
     <div onclick="scrollToTop()" id="scroll"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
 
 </body>
+
 </html>

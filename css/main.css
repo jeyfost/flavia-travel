@@ -8,14 +8,14 @@ body input:required:valid, body textarea:required:valid {}
 body {font-family: "RobotoRegular", sans-serif;	font-size: 16px; margin: 0; padding: 0;}
 a {text-decoration: none;}
 input {font-size: 16px; font-family: "Istok Web", sans-serif; width: 95%; height: 30px; padding-left: 5px; padding-right: 5px; line-height: 30px;}
-textarea {font-size: 16px; font-family: "Montserrat", sans-serif;, width: 95%; padding: 5px; resize: none; transition: .3s;}
+textarea {font-size: 16px; font-family: "Montserrat", sans-serif; width: 95%; padding: 5px; resize: none; transition: .3s;}
 label {font-family: "Istok Web", sans-serif;}
 
 #scroll:hover {color: #4d009a;}
-#messageButton:hover, .promoButton:hover {background-color: #ff6030;}
+#messageButton:hover, .promoButton:hover, .reviewButton:hover, .remodal-confirm:hover {background-color: #ff6030 !important;}
 .newsContainer:hover {background-color: #ebebeb;}
 .breadcrumbsLink:hover {text-decoration: underline;}
-.greyFont a:hover {color: #ff6030;}
+.greyFont a:hover, .reviewsLink:hover {color: #ff6030;}
 
 #index {z-index: 1; background-image: url(/img/slides/slide-01.jpg); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: #464646; transition: .3s;}
 #menu {width: 100%; height: 70px; background-color: transparent; z-index: 1000; position: fixed; transition: .3s;}
@@ -35,7 +35,7 @@ label {font-family: "Istok Web", sans-serif;}
 .sloganSmallFont, .half, p {font-size: 16px; font-family: "Montserrat", sans-serif;}
 .overlay {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #000; opacity: .35; z-index: 2;}
 .clear {clear: both;}
-.promoButton, #messageButton {padding-left: 15px; padding-right: 15px; height: 40px; line-height: 40px; color: #fff; background-color: #4d009a; border-radius: 3px; border: none; transition: .3s; cursor: pointer; font-variant: small-caps; font-size: 16px; font-family: "Istok Web", sans-serif;}
+.promoButton, .reviewButton, #messageButton {padding-left: 15px; padding-right: 15px; height: 40px; line-height: 40px; color: #fff; background-color: #4d009a; border-radius: 3px; border: none; transition: .3s; cursor: pointer; font-variant: small-caps; font-size: 16px; font-family: "Istok Web", sans-serif;}
 .promoButton i {padding-right: 10px;}
 .showing {opacity: 1; z-index: 2;}
 .sliderButtons {width: 68px; height: 16px; position: absolute; bottom: 50px; left: 50%; margin-left: -24px; z-index: 4;}
@@ -98,3 +98,11 @@ label {font-family: "Istok Web", sans-serif;}
 .copyFont {font-family: "Istok Web", sans-serif; font-size: 14px; color: #fff; transition: .3s;}
 .greyFont, .greyFont a {font-family: "Istok Web", sans-serif; font-size: 12px; color: #999; transition: .3s;}
 .creator {width: 180px; float: right;}
+.reviewsLink {font-size: 14px; font-family: "Montserrat", sans-serif; color: #000; transition: .3s;}
+.remodal input {width: 80%; padding: 5px 10px; height: 30px; border: 1px solid #a9a9a9; font-size: 14px; font-family: "Istok Web", sans-serif;}
+.remodal textarea {width: 80%; padding: 5px 10px; min-height: 150px; resize: none; border: 1px solid #a9a9a9; font-size: 14px; font-family: "Istok Web", sans-serif;}
+.remodal h1 {text-transform: uppercase; color: #474747; font-size: 14px;}
+.remodal {font-family: "Istok Web", sans-serif;}
+.remodal-confirm {transition: .3s !important; background-color: #4d009a !important; font-family: "Istok Web", sans-serif;}
+.notifyjs-corner, .notifyjs-wrapper {z-index: 9999999 !important; font-size: 14px;}
+.reviewContainer {font-size: 14px; font-family: "Istok Web", sans-serif;}

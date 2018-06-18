@@ -35,6 +35,7 @@ $(window).on("scroll", function () {
        document.getElementById("logoIMG").src = "/img/system/logoPurple.png";
 
        $('#mpContacts').css("color", "#282828");
+       $('#mpReviews').css("color", "#282828");
        $('#mpPhone').css("color", "#282828");
        $('#mpEmail').css("color", "#282828");
 
@@ -43,10 +44,12 @@ $(window).on("scroll", function () {
        }
 
        $('#mpContacts').css("border-right", "1px solid #282828");
+       $('#mpReviews').css("border-right", "1px solid #282828");
        $('#mpNews').css("border-right", "1px solid #282828");
        $('#mpPhone').css("border-right", "1px solid #282828");
 
        $('#mpNews').css("margin-top", "20px");
+       $('#mpReviews').css("margin-top", "20px");
        $('#mpContacts').css("margin-top", "20px");
        $('#mpPhone').css("margin-top", "20px");
        $('#mpEmail').css("margin-top", "20px");
@@ -58,6 +61,7 @@ $(window).on("scroll", function () {
        document.getElementById("logoIMG").src = "/img/system/logoWhite.png";
 
        $('#mpContacts').css("color", "#fff");
+       $('#mpReviews').css("color", "#fff");
        $('#mpPhone').css("color", "#fff");
        $('#mpEmail').css("color", "#fff");
 
@@ -66,10 +70,12 @@ $(window).on("scroll", function () {
        }
 
        $('#mpContacts').css("border-right", "1px solid #fff");
+       $('#mpReviews').css("border-right", "1px solid #fff");
        $('#mpNews').css("border-right", "1px solid #fff");
        $('#mpPhone').css("border-right", "1px solid #fff");
 
        $('#mpNews').css("margin-top", "25px");
+       $('#mpReviews').css("margin-top", "25px");
        $('#mpContacts').css("margin-top", "25px");
        $('#mpPhone').css("margin-top", "25px");
        $('#mpEmail').css("margin-top", "25px");

@@ -172,6 +172,7 @@
             <a href="mailto: flavia-travel@mail.ru"><div class="menuPoint noBorder" id="mpEmail" onmouseover="fontColor(1, 'mpEmail')" onmouseout="fontColor(2, 'mpEmail')"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;flavia-travel@mail.ru</div></a>
             <a href="tel: +375222745444"><div class="menuPoint" id="mpPhone" onmouseover="fontColor(1, 'mpPhone')" onmouseout="fontColor(2, 'mpPhone')"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;+375 222 74-54-44</div></a>
             <a href="/contacts"><div class="menuPoint" id="mpContacts" onmouseover="fontColor(1, 'mpContacts')" onmouseout="fontColor(2, 'mpContacts')">Контакты</div></a>
+            <a href="/reviews"><div class="menuPoint" id="mpReviews" onmouseover="fontColor(1, 'mpReviews')" onmouseout="fontColor(2, 'mpReviews')">Отзывы</div></a>
             <a href="/news"><div class="menuPoint <?php if($url[0] == "news") {echo "activePoint";} ?>" id="mpNews" <?php if($url[0] != "news") {echo "onmouseover='fontColor(1, \"mpNews\")' onmouseout='fontColor(2, \"mpNews\")'";} ?>>Новости</div></a>
         </div>
         <div class="clear"></div>
@@ -307,7 +308,6 @@
                                     if($uri >= 5 and $uri < $check) {
                                         echo "
                                             <br /><br />
-                                            <div id='pageNumbers'>
                                                 <a href='".$link.($uri - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='paginationLink' id='pbtPrev'>Предыдущая</span></div></a>
                                                 <a href='".$link."1' class='noBorder'><div id='pb1' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1\", \"pbt1\")' onmouseout='pageBlock(0, \"pb1\", \"pbt1\")'><span class='paginationLink' id='pbt1'>1</span></div></a>
                                                 <div class='pageNumberBlock' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='paginationInactive'>...</span></div>
@@ -322,7 +322,6 @@
                                     } else {
                                         echo "
                                             <br /><br />
-                                            <div id='pageNumbers'>
                                                 <a href='".$link.($uri - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='paginationLink' id='pbtPrev'>Предыдущая</span></div></a>
                                                 <a href='".$link."1' class='noBorder'><div id='pb1' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1\", \"pbt1\")' onmouseout='pageBlock(0, \"pb1\", \"pbt1\")'><span class='paginationLink' id='pbt1'>1</span></div></a>
                                                 <div class='pageNumberBlock' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='paginationInactive'>...</span></div>

@@ -90,6 +90,7 @@
             <a href="mailto: flavia-travel@mail.ru"><div class="menuPoint noBorder" id="mpEmail" onmouseover="fontColor(1, 'mpEmail')" onmouseout="fontColor(2, 'mpEmail')"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;flavia-travel@mail.ru</div></a>
             <a href="tel: +375222745444"><div class="menuPoint" id="mpPhone" onmouseover="fontColor(1, 'mpPhone')" onmouseout="fontColor(2, 'mpPhone')"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;+375 222 74-54-44</div></a>
             <a href="/contacts"><div class="menuPoint activePoint" id="mpContacts">Контакты</div></a>
+            <a href="/reviews"><div class="menuPoint" id="mpReviews" onmouseover="fontColor(1, 'mpReviews')" onmouseout="fontColor(2, 'mpReviews')">Отзывы</div></a>
             <a href="/news"><div class="menuPoint" id="mpNews" onmouseover="fontColor(1, 'mpNews')" onmouseout="fontColor(2, 'mpNews')">Новости</div></a>
         </div>
         <div class="clear"></div>
@@ -192,4 +193,5 @@
     <div onclick="scrollToTop()" id="scroll"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
 
 </body>
+
 </html>
