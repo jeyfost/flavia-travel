@@ -77,6 +77,9 @@
         $start = $page * 10 - 10;
     }
 
+    $pageResult = $mysqli->query("SELECT * FROM ft_news WHERE url = 'news'");
+    $page = $pageResult->fetch_assoc();
+
 ?>
 
 <!DOCTYPE html>
@@ -90,10 +93,34 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-	<meta name="keywords" content="" />
+    <meta name="description" content="<?= $page['description'] ?>" />
+	<meta name="keywords" content="<?= $page['keywords'] ?>" />
 
-    <title>Туристическое агенство Флавиа-Трэвел | Новости</title>
+    <title>
+        <?php
+            if($type == "list") {
+                echo $page['title'];
+            } else {
+                switch ($type) {
+                    case "news":
+                        $newsResult = $mysqli->query("SELECT * FROM ft_news WHERE url = '".$address."'");
+                        $news = $newsResult->fetch_assoc();
+
+                        echo $news['header'];
+                        break;
+                    case "offer":
+                        $offerResult = $mysqli->query("SELECT * FROM ft_offers WHERE url = '".$address."'");
+                        $offer = $offerResult->fetch_assoc();
+
+                        echo $offer['header'];
+                        break;
+                    default:
+                        echo $page['title'];
+                        break;
+                }
+            }
+        ?>
+    </title>
 
     <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">

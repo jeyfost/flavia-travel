@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: jeyfost
- * Date: 18.06.2018
- * Time: 14:18
+ * Date: 05.07.2018
+ * Time: 11:10
  */
 
 session_start();
@@ -14,10 +14,10 @@ if($_SESSION['userID'] != 1) {
 }
 
 if(!empty($_REQUEST['id'])) {
-    $reviewCheckResult = $mysqli->query("SELECT COUNT(id) FROM ft_reviews WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
-    $reviewCheck = $reviewCheckResult->fetch_array(MYSQLI_NUM);
+    $pageCheckResult = $mysqli->query("SELECT COUNT(id) FROM ft_pages WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+    $pageCheck = $pageCheckResult->fetch_array(MYSQLI_NUM);
 
-    if($reviewCheck[0] == 0) {
+    if($pageCheck[0] == 0) {
         header("Location: index.php");
     }
 }
@@ -37,7 +37,7 @@ if(!empty($_REQUEST['id'])) {
 
     <meta charset="utf-8" />
 
-    <title>Панель администрирования</title>
+    <title>Панель администрирования | Страницы</title>
 
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -59,8 +59,8 @@ if(!empty($_REQUEST['id'])) {
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/admin/common.js"></script>
-    <script type="text/javascript" src="/js/admin/reviews/index.js"></script>
     <script type="text/javascript" src="/js/notify.js"></script>
+    <script type="text/javascript" src="/js/admin/pages/index.js"></script>
 
     <style>
         #page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -84,7 +84,7 @@ if(!empty($_REQUEST['id'])) {
 
 <div id="topLine">
     <div id="logo">
-        <a href="../"><span><i class="fa fa-home" aria-hidden="true"></i> flavia-travel.by</span></a>
+        <a href="/"><span><i class="fa fa-home" aria-hidden="true"></i> flavia-travel.by</span></a>
     </div>
     <a href="admin.php"><span class="headerText">Панель администрирвания</span></a>
     <div id="exit" onclick="exit()">
@@ -93,7 +93,7 @@ if(!empty($_REQUEST['id'])) {
 </div>
 <div id="leftMenu">
     <a href="/admin/pages/">
-        <div class="menuPoint">
+        <div class="menuPointActive">
             <i class="fa fa-file-text-o" aria-hidden="true"></i><span> Страницы</span>
         </div>
     </a>
@@ -113,7 +113,7 @@ if(!empty($_REQUEST['id'])) {
         </div>
     </a>
     <a href="/admin/reviews/">
-        <div class="menuPointActive">
+        <div class="menuPoint">
             <i class="fa fa-comment" aria-hidden="true"></i><span> Отзывы</span>
         </div>
     </a>
@@ -125,62 +125,44 @@ if(!empty($_REQUEST['id'])) {
 </div>
 
 <div id="content">
-    <span class="headerFont"><?php if(empty($_REQUEST['id'])) {echo "Редактирование отзывов";} else {echo "Редактирование отзыва";} ?></span>
+    <span class="headerFont">Редактирование страниц</span>
     <br /><br />
-    <?php
-        if(empty($_REQUEST['id'])) {
-            $reviewResult = $mysqli->query("SELECT * FROM ft_reviews ORDER BY date DESC");
-
-            if($reviewResult->num_rows > 0) {
-                while($review = $reviewResult->fetch_assoc()) {
-                    echo "
-                        <br />
-                        <div class='row border-bottom'>
-                            <span class='nameFont'>".$review['name']."</span>
-                            <br />
-                            <span class='emailFont'>".$review['email']."</span>
-                            <br />
-                            <span>".dateForReview($review['date'])."</span>
-                            <br /><br />
-                            <p>".$review['text']."</p>
-                            <br />
-                            <form id='showForm' method='post' class='relative'>
-                                <label for='showInput'>Отображать?</label>
-                                <input type='checkbox' class='checkbox' id='showButton".$review['id']."' name='show' onclick='showReview(\"".$review['id']."\", \"showButton".$review['id']."\")' "; if($review['showing'] == 1) {echo "checked";} echo " />
-                            </form>
-                            <div class='clear'></div>
-                            <br />
-                            <a href='/admin/reviews/index.php?id=".$review['id']."'><i class='fa fa-pencil-square-o' aria-hidden='true'></i> Редактировать</a>
-                            <br />
-                            <span class='linkRed' onclick='deleteReview(\"".$review['id']."\")'><i class='fa fa-trash-o' aria-hidden='true'></i> Удалить</span>
-                            <br /><br />
-                        </div>
-                    ";
+    <form method="post" id="pagesForm">
+        <label for="pageSelect">Страницы:</label>
+        <br />
+        <select id="pageSelect" name="page" onchange="window.location = '?id=' + this.options[this.selectedIndex].value">
+            <option value="">- Выберите страницу -</option>
+            <?php
+                $pageResult = $mysqli->query("SELECT * FROM ft_pages ORDER BY id");
+                while($page = $pageResult->fetch_assoc()) {
+                    echo "<option value='".$page['id']."'"; if($_REQUEST['id'] == $page['id']) {echo " selected";} echo ">".$page['name']."</option>";
                 }
-            } else {
-                echo "На данный момент отзывов на сайте нет.";
-            }
-        } else {
-            $reviewResult = $mysqli->query("SELECT * FROM ft_reviews WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
-            $review = $reviewResult->fetch_assoc();
+            ?>
+        </select>
+        <?php
+            if(!empty($_REQUEST['id'])) {
+                $pageResult = $mysqli->query("SELECT * FROM ft_pages WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+                $page = $pageResult->fetch_assoc();
 
-            echo "
-                <a href='/admin/reviews'><i class='fa fa-long-arrow-left' aria-hidden='true'></i> Вернуться к списку отзывов</a>
-                <br /><br />
-                <form id='reviewForm' method='post'>
-                    <label for='nameInput'>Имя:</label>
-                    <br />
-                    <input id='nameInput' value='".$review['name']."' />
-                    <br /><br />
-                    <label for='textInput'>Текст отзыва:</label>
-                    <br />
-                    <textarea id='textInput' onkeydown='textAreaHeight(this)'>".str_replace("<br />", "", $review['text'])."</textarea>
-                    <br /><br />
-                    <input type='button' class='button' id='reviewSubmit' value='Редактировать' onmouseover='buttonHover(\"reviewSubmit\", 1)' onmouseout='buttonHover(\"reviewSubmit\", 0)' onclick='edit(\"".$review['id']."\")' />
-                </form>
-            ";
-        }
-    ?>
+                echo "
+                        <br /><br />
+                        <label for='titleInput'>Заголовок (тег <b>title</b>):</label>
+                        <br />
+                        <input id='titleInput' name='title' value='".$page['title']."' />
+                        <br /><br />
+                        <label for='keywordsInput'>Ключевые слова (meta-тег <b>keywords</b>):</label>
+                        <br />
+                        <textarea id='keywordsInput' name='keywords' onkeydown='textAreaHeight(this)'>".$page['keywords']."</textarea>
+                        <br /><br />
+                        <label for='descriptionInput'>Описание (meta-тег <b>description</b>):</label>
+                        <br />
+                        <textarea id='descriptionInput' name='description' onkeydown='textAreaHeight(this)'>".$page['description']."</textarea>
+                        <br /><br />
+                        <input type='button' class='button' id='pageSubmit' value='Редактировать' onmouseover='buttonHover(\"pageSubmit\", 1)' onmouseout='buttonHover(\"pageSubmit\", 0)' onclick='edit()' />
+                    ";
+            }
+        ?>
+    </form>
 </div>
 
 </body>

@@ -86,6 +86,11 @@ if($_SESSION['userID'] != 1) {
 		</div>
 	</div>
 	<div id="leftMenu">
+        <a href="/admin/pages/">
+            <div class="menuPoint">
+                <i class="fa fa-file-text-o" aria-hidden="true"></i><span> Страницы</span>
+            </div>
+        </a>
         <a href="/admin/images/">
             <div class="menuPoint">
                 <i class="fa fa-picture-o" aria-hidden="true"></i><span> Фотографии</span>

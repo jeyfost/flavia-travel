@@ -1,5 +1,8 @@
 <?php
     include('scripts/connect.php');
+
+    $pageResult = $mysqli->query("SELECT * FROM ft_pages WHERE url = ''");
+    $page = $pageResult->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +16,10 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-	<meta name="keywords" content="" />
+    <meta name="description" content="<?= $page['description'] ?>" />
+	<meta name="keywords" content="<?= $page['keywords'] ?>" />
 
-    <title>Туристическое агенство Флавиа-Трэвел</title>
+    <title><?= $page['title'] ?></title>
 
     <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
