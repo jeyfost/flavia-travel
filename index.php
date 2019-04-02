@@ -339,10 +339,10 @@
                             <a href="" target="_blank"><img src="/img/system/facebook.png" id="facebook" onmouseover="changeIcon('facebook', 1)" onmouseout="changeIcon('facebook', 0)" /></a>
                         </div>
                         <div class="socialButton">
-                            <a href="" target="_blank"><img src="/img/system/instagram.png" id="instagram" onmouseover="changeIcon('instagram', 1)" onmouseout="changeIcon('instagram', 0)" /></a>
+                            <a href="https://www.instagram.com/flavia_travel/" target="_blank"><img src="/img/system/instagram.png" id="instagram" onmouseover="changeIcon('instagram', 1)" onmouseout="changeIcon('instagram', 0)" /></a>
                         </div>
                         <div class="socialButton">
-                            <a href="" target="_blank"><img src="/img/system/vk.png" id="vk" onmouseover="changeIcon('vk', 1)" onmouseout="changeIcon('vk', 0)" /></a>
+                            <a href="https://vk.com/flaviatravel" target="_blank"><img src="/img/system/vk.png" id="vk" onmouseover="changeIcon('vk', 1)" onmouseout="changeIcon('vk', 0)" /></a>
                         </div>
                         <div class="clear"></div>
                     </div>
