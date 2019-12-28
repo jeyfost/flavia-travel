@@ -106,7 +106,7 @@
     </div>
 
     <div id="screenSpace">
-        <div class="clouds"></div>
+        <!--<div class="clouds"></div>-->
         <div class="clear"></div>
         <div class="overlay"></div>
         <div class="slogan revealator-slideup revealator-load revealator-delay12">
