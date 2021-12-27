@@ -223,36 +223,27 @@
                 <span class="headerFont">Отзывы клиентов</span>
                 <br /><br /><br /><br />
                 <div class="container thin" id="clients">
-                    <div class="column first">
-                        <div class="clientPhoto">
-                            <img src="/img/system/client-lisa.jpg" />
-                        </div>
-                        <div class="review">
-                            <p>Словакия в декабре невероятно прекрасна! С самого первого дня мы оказались в снежной сказке. Наша семья переполнена впечатлениями и волнующими воспоминианиями. Спасибо!</p>
-                            <span class="nameFont">— Елизавета</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="column">
-                        <div class="clientPhoto">
-                            <img src="/img/system/client-alex.jpg" />
-                        </div>
-                        <div class="review">
-                            <p>Флавиа-Трэвел стало лучшим агенством для нас! Вы рассмотрели все наши пожелания при планировании нашей поездки. Каждое сделанное вами предложение было превосходным!</p>
-                            <span class="nameFont">— Алексей</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="column">
-                        <div class="clientPhoto">
-                            <img src="/img/system/client-evgeni.jpg" />
-                        </div>
-                        <div class="review">
-                            <p>Хочу сказать Вам огромное спасибо за помощь во время моей недавней поездки в Испанию. Это для меня бесценно.</p>
-                            <span class="nameFont">— Евгений</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+                    <?php
+                        $i = 1;
+
+                        $reviewResult = $mysqli->query("SELECT * FROM ft_reviews WHERE showing = '1' ORDER BY date DESC LIMIT 3");
+                        while ($review = $reviewResult->fetch_assoc()) {
+                            echo "
+                                <div class='column first'>
+                                    <div class='clientPhoto'>
+                                        <img src='img/system/review-".$i.".png' />
+                                    </div>
+                                    <div class='review'>
+                                        <p>".$review['text']."</p>
+                                        <span class='nameFont'>— ".$review['name']."</span>
+                                    </div>
+                                    <div class='clear'></div>
+                                </div>
+                            ";
+
+                            $i++;
+                        }
+                    ?>
                     <div class="clear"></div>
                     <br /><br />
                     <a data-remodal-target="modal"><button class="reviewButton"><i class="fa fa-pencil" aria-hidden="true"></i> оставьте свой отзыв</button></a>
@@ -269,10 +260,10 @@
                 <br /><br /><br /><br />
                 <div class="container text-center">
                     <div class="logoContainer first" style="margin: 0;">
-                        <img src="/img/logo/smok-travel-logo-grey.png" id="smok-travel" onmouseover="changeLogo('smok-travel', 1)" onmouseout="changeLogo('smok-travel', 0)" />
+                        <img src="/img/logo/anex-tour-logo-grey.png" id="anex-tour" onmouseover="changeLogo('anex-tour', 1)" onmouseout="changeLogo('anex-tour', 0)" />
                     </div>
                     <div class="logoContainer">
-                        <img src="/img/logo/solvex-logo-grey.png" id="solvex" onmouseover="changeLogo('solvex', 1)" onmouseout="changeLogo('solvex', 0)" />
+                        <img src="/img/logo/tui-logo-grey.png" id="tui" onmouseover="changeLogo('tui', 1)" onmouseout="changeLogo('tui', 0)" />
                     </div>
                     <div class="logoContainer">
                         <img src="/img/logo/tez-tour-logo-grey.png" id="tez-tour" onmouseover="changeLogo('tez-tour', 1)" onmouseout="changeLogo('tez-tour', 0)" />
@@ -281,7 +272,7 @@
                         <img src="/img/logo/time-voyage-logo-grey.png" id="time-voyage" onmouseover="changeLogo('time-voyage', 1)" onmouseout="changeLogo('time-voyage', 0)" />
                     </div>
                     <div class="logoContainer">
-                        <img src="/img/logo/top-tour-logo-grey.png" id="top-tour" onmouseover="changeLogo('top-tour', 1)" onmouseout="changeLogo('top-tour', 0)" />
+                        <img src="/img/logo/coral-travel-logo-grey.png" id="coral-travel" onmouseover="changeLogo('coral-travel', 1)" onmouseout="changeLogo('coral-travel', 0)" />
                     </div>
                     <div class="clear"></div>
                 </div>
